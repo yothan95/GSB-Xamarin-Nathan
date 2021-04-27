@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DemoXamarin.Pages.PageSliderStipper">
+  <ContentView.Content>
+      <StackLayout>
+            <StackLayout HeightRequest="200" Orientation="Horizontal">
+                <Label Text="Slider" WidthRequest="50" FontSize="Small" VerticalOptions="Center"></Label>
+                <Slider x:Name="sld" Minimum="0" Maximum="10" Value="5" VerticalOptions="Center" WidthRequest="150"></Slider>
+                <Label VerticalOptions="Center" WidthRequest="50" Text="{Binding Source={x:Reference Name=sld},Path=Value}"></Label>
+            </StackLayout>
+            <StackLayout HeightRequest="200" Orientation="Horizontal">
+                <Label Text="Stepper" WidthRequest="50" VerticalOptions="Center"></Label>
+                <Stepper x:Name="stp" Minimum="0" Maximum="10" Value="5" Increment="1" VerticalOptions="Center" WidthRequest="150"></Stepper>
+                <Label VerticalOptions="Center" WidthRequest="50" Text="{Binding Source={x:Reference Name=stp},Path=Value}"></Label>
+            </StackLayout>
+        </StackLayout>
+  </ContentView.Content>
+</ContentView>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TestAPIGSB.Pages.PageSpecialite">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="lvSpecialite" ItemSelected="lvSpecialite_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout Orientation="Horizontal" HeightRequest="100">
+                                    <Label x:Name="lblCodeTicket" VerticalOptions="Center" HorizontalOptions="Center"
+                                               WidthRequest="80" FontSize="20"
+                                               Text="{Binding spe_code}"></Label>
+                                    <Label x:Name="lblLibelleTicket" WidthRequest="200" VerticalOptions="Center" FontSize="20"
+                                               Text="{Binding spe_libelle}"></Label>
+                                </StackLayout> 
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Label>Nom de la specialite</Label>
+            <Entry x:Name="txtNomSpecialite"></Entry>
+            <StackLayout Orientation="Horizontal">
+                <Button HorizontalOptions="Center" Text="Modifier" x:Name="btnModifier" Clicked="btnModifier_Clicked"></Button>
+                <Button HorizontalOptions="Center" Text="Ajouter" x:Name="btnAjouter" Clicked="btnAjouter_Clicked"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

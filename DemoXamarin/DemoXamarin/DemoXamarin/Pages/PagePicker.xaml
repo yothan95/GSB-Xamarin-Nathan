@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DemoXamarin.Pages.PagePicker">
+  <ContentView.Content>
+      <StackLayout>
+            <Picker SelectedIndexChanged="pkVilles_SelectedIndexChanged"
+                    x:Name="pkVilles" Title="Villes"></Picker>
+            <DatePicker x:Name="dpDate"></DatePicker>
+            <TimePicker x:Name="tpTime"></TimePicker>
+        </StackLayout>
+  </ContentView.Content>
+</ContentView>

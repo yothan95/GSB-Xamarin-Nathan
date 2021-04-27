@@ -1,0 +1,6 @@
+RewriteEngine On # Activer le module Rewrite
+RewriteRule ^specialite/?$ DAOSpecialite.php [NC,L]
+RewriteRule ^[^/]+/(\d+)$ DAOSpecialite.php?spe_code=$1
+
+RewriteRule ^praticien/?$ DAOPraticien.php [NC,L]
+RewriteRule ^[^/]+/(\d+)$ DAOPraticien.php?pra_num=$1
