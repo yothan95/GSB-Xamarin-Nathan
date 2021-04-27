@@ -6,7 +6,7 @@
 	{
 		global $cnx;
 		$reponse = array();
-		$sql = $cnx->prepare("SELECT SPE_CODE, SPE_LIBELLE FROM specialite");
+		$sql = $cnx->prepare("select * from specialite");
 		$sql->execute();
 		$lesSpecialites = $sql->fetchAll(PDO::FETCH_NUM);
 		//var_dump($lesSpecialites);
@@ -23,7 +23,7 @@
 	function getLaSpecialite($spe_code)
 	{
 		global $cnx;
-		$sql = $cnx->prepare("SELECT SPE_CODE, SPE_LIBELLE FROM specialite where SPE_CODE = ?");
+		$sql = $cnx->prepare("select * from specialite where spe_code = ?");
 		$sql->bindValue(1,$spe_code);
 		$sql->execute();
 		$row = $sql->fetch(PDO::FETCH_NUM);
@@ -39,7 +39,7 @@
 		global $cnx;
 		$json_str = file_get_contents('php://input');
 		$spe_libelle = json_decode($json_str);
-		$sql = $cnx->prepare("select max(SPE_CODE) from specialite");
+		$sql = $cnx->prepare("select max(spe_code) from specialite");
 		$sql->execute();
 		$row = $sql->fetch(PDO::FETCH_NUM);
 		$sql = $cnx->prepare("insert into specialite values(?,?)");
@@ -53,7 +53,7 @@
 		global $cnx;
 		$json_str = file_get_contents('php://input');
 		$laSpecialite = json_decode($json_str);
-		$sql = $cnx->prepare("update specialite set SPE_LIBELLE = ? where SPE_CODE = ?");
+		$sql = $cnx->prepare("update specialite set spe_libelle = ? where spe_code = ?");
 		$sql->bindValue(1,$laSpecialite->spe_libelle);
 	 	$sql->bindValue(2,$laSpecialite->spe_code);
 		$sql->execute();
